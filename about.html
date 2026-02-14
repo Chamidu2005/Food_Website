@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Tasty Foods</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ea580c',
+                        secondary: '#1e293b',
+                        accent: '#facc15',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md fixed w-full z-50 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <i class="fas fa-utensils text-primary text-3xl"></i>
+                        <span class="font-bold text-2xl tracking-tighter text-gray-900">TASTY<span
+                                class="text-primary">FOODS</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 font-medium hover:text-primary transition">Home</a>
+                    <a href="menu.html" class="text-gray-600 font-medium hover:text-primary transition">Menu</a>
+                    <a href="about.html" class="text-primary font-medium hover:text-primary transition">About</a>
+                    <a href="contact.html" class="text-gray-600 font-medium hover:text-primary transition">Contact</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button id="cart-btn" class="relative p-2 text-gray-600 hover:text-primary transition">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span id="cart-count"
+                            class="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                    </button>
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <a href="index.html" class="block py-3 px-4 text-gray-600 hover:bg-gray-50 hover:text-primary">Home</a>
+            <a href="menu.html" class="block py-3 px-4 text-gray-600 hover:bg-gray-50 hover:text-primary">Menu</a>
+            <a href="about.html" class="block py-3 px-4 text-primary font-medium bg-orange-50">About</a>
+            <a href="contact.html" class="block py-3 px-4 text-gray-600 hover:bg-gray-50 hover:text-primary">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-secondary text-white py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/50 z-0"></div>
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+            class="absolute inset-0 w-full h-full object-cover opacity-50 z-[-1]" alt="About Header">
+        <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Our Story</h1>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto">From humble beginnings to your favorite food spot.</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Chefs" class="rounded-2xl shadow-2xl relative z-10">
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-primary rounded-2xl -z-0 hidden md:block">
+                    </div>
+                    <div class="absolute -top-6 -left-6 w-48 h-48 bg-gray-100 rounded-2xl -z-0 hidden md:block"></div>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">We Cook With <span
+                            class="text-primary">Passion</span></h2>
+                    <p class="text-gray-500 mb-6 leading-relaxed">
+                        Tasty Foods started with a simple mission: to serve the most authentic, mouth-watering food in
+                        Sri Lanka. Our journey began in a small kitchen with big dreams. Today, we are proud to serve
+                        thousands of happy customers.
+                    </p>
+                    <p class="text-gray-500 mb-8 leading-relaxed">
+                        We believe that food is not just about taste, but about the experience. That's why we source
+                        only the freshest ingredients and employ the most talented chefs to craft every meal with love.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="border-l-4 border-primary pl-4">
+                            <h4 class="text-2xl font-bold text-gray-900">10+</h4>
+                            <p class="text-gray-500 text-sm">Years of Service</p>
+                        </div>
+                        <div class="border-l-4 border-primary pl-4">
+                            <h4 class="text-2xl font-bold text-gray-900">50k+</h4>
+                            <p class="text-gray-500 text-sm">Happy Customers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="#" class="flex items-center gap-2 mb-4">
+                        <i class="fas fa-utensils text-primary text-2xl"></i>
+                        <span class="font-bold text-xl tracking-tighter">TASTY<span
+                                class="text-primary">FOODS</span></span>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Bringing you the best flavors from around the world. Fresh, hot, and delicious.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
+                        <li><a href="menu.html" class="hover:text-primary transition">Menu</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary"></i>
+                            <span>123 Food Street, Colombo 07, Sri Lanka</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span>+94 77 123 4567</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <div class="flex">
+                        <input type="email" placeholder="Email"
+                            class="w-full px-4 py-2 rounded-l-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-primary">
+                        <button class="bg-primary px-4 py-2 rounded-r-lg hover:bg-orange-700 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">© 2026 Tasty Foods. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal (Same as Home) -->
+    <div id="cart-modal" class="fixed inset-0 z-[60] hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity" id="cart-overlay"></div>
+        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl transform transition-transform translate-x-full duration-300 flex flex-col"
+            id="cart-panel">
+            <div class="p-5 border-b flex justify-between items-center bg-gray-50">
+                <h2 class="text-xl font-bold flex items-center gap-2"><i class="fas fa-shopping-bag text-primary"></i>
+                    Your Cart</h2>
+                <button id="close-cart" class="text-gray-500 hover:text-red-500 transition">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto p-5 space-y-4" id="cart-items">
+                <!-- Cart items will be injected here -->
+            </div>
+            <div class="p-5 border-t bg-gray-50">
+                <div class="flex justify-between items-center mb-4 text-lg font-bold">
+                    <span>Total</span>
+                    <span class="text-primary" id="cart-total">$0.00</span>
+                </div>
+                <button
+                    class="w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-orange-700 transition shadow-lg shadow-orange-500/30">
+                    Checkout Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300">
+        <div
+            class="bg-secondary text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 border-l-4 border-primary">
+            <i class="fas fa-check-circle text-green-400 text-xl"></i>
+            <div>
+                <h4 class="font-bold text-sm">Added to Cart!</h4>
+                <p class="text-xs text-gray-300" id="toast-message">Item added successfully.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

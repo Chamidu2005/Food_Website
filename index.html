@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Foods - Best Food in Town</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ea580c', // orange-600
+                        secondary: '#1e293b', // slate-800
+                        accent: '#facc15', // yellow-400
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md fixed w-full z-50 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <i class="fas fa-utensils text-primary text-3xl"></i>
+                        <span class="font-bold text-2xl tracking-tighter text-gray-900">TASTY<span
+                                class="text-primary">FOODS</span></span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-primary font-medium hover:text-primary transition">Home</a>
+                    <a href="menu.html" class="text-gray-600 font-medium hover:text-primary transition">Menu</a>
+                    <a href="about.html" class="text-gray-600 font-medium hover:text-primary transition">About</a>
+                    <a href="contact.html" class="text-gray-600 font-medium hover:text-primary transition">Contact</a>
+                </div>
+
+                <!-- Cart & Mobile Button -->
+                <div class="flex items-center gap-4">
+                    <button id="cart-btn" class="relative p-2 text-gray-600 hover:text-primary transition">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span id="cart-count"
+                            class="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                    </button>
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <a href="index.html" class="block py-3 px-4 text-primary font-medium bg-orange-50">Home</a>
+            <a href="menu.html" class="block py-3 px-4 text-gray-600 hover:bg-gray-50 hover:text-primary">Menu</a>
+            <a href="about.html" class="block py-3 px-4 text-gray-600 hover:bg-gray-50 hover:text-primary">About</a>
+            <a href="contact.html" class="block py-3 px-4 text-gray-600 hover:bg-gray-50 hover:text-primary">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+                alt="Food Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16" data-aos="fade-up">
+            <span class="text-accent font-bold tracking-wider uppercase text-sm mb-4 block animate-bounce-slow">Welcome
+                to Tasty Foods</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+                Authentic Taste, <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Super Quality</span>
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                Experience the finest culinary delights delivered straight to your doorstep. Fresh ingredients,
+                masterful chefs, and unforgettable flavors.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="menu.html"
+                    class="px-8 py-4 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-orange-700 transition transform hover:-translate-y-1 hover:shadow-orange-500/30">
+                    Order Now <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#featured"
+                    class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/30 font-bold rounded-full hover:bg-white hover:text-gray-900 transition">
+                    View Specials
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="featured" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="text-gray-500 mt-4">We serve more than just food; we serve happiness.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 p-8 rounded-2xl text-center hover:shadow-xl transition duration-300 group">
+                    <div
+                        class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition duration-300">
+                        <i class="fas fa-shipping-fast text-2xl text-primary group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Fast Delivery</h3>
+                    <p class="text-gray-500">Hot and fresh food delivered to your doorstep within 30 minutes.
+                        Guaranteed.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 p-8 rounded-2xl text-center hover:shadow-xl transition duration-300 group">
+                    <div
+                        class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition duration-300">
+                        <i class="fas fa-leaf text-2xl text-primary group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Fresh Ingredients</h3>
+                    <p class="text-gray-500">We source our vegetables and meats daily from local farmers for the best
+                        taste.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 p-8 rounded-2xl text-center hover:shadow-xl transition duration-300 group">
+                    <div
+                        class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition duration-300">
+                        <i class="fas fa-award text-2xl text-primary group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Master Chefs</h3>
+                    <p class="text-gray-500">Our chefs are experts in their craft, bringing you world-class flavors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Dishes (Preview) -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Popular Dishes</h2>
+                    <div class="w-20 h-1 bg-primary rounded-full"></div>
+                </div>
+                <a href="menu.html" class="text-primary font-bold hover:text-orange-700 flex items-center gap-2">
+                    View Full Menu <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Dish Card 1 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                            alt="Burger"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg text-xs font-bold text-gray-800">
+                            <i class="fas fa-star text-yellow-400"></i> 4.8
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Tasty Burger</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Juicy beef patty with melted cheddar, fresh
+                            lettuce, and our secret sauce.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">$12.99</span>
+                            <button
+                                class="add-to-cart-btn w-10 h-10 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition"
+                                data-id="1" data-name="Tasty Burger" data-price="12.99">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish Card 2 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                            alt="Pizza"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg text-xs font-bold text-gray-800">
+                            <i class="fas fa-star text-yellow-400"></i> 4.9
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Classic Pepperoni</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Authentic Italian pepperoni with mozzarella
+                            and fresh basil.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">$15.99</span>
+                            <button
+                                class="add-to-cart-btn w-10 h-10 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition"
+                                data-id="2" data-name="Classic Pepperoni" data-price="15.99">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish Card 3 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                            alt="Salad"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg text-xs font-bold text-gray-800">
+                            <i class="fas fa-star text-yellow-400"></i> 4.7
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Healthy Bowl</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Fresh garden greens, quinoa, avocado, and
+                            lime dressing.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">$10.99</span>
+                            <button
+                                class="add-to-cart-btn w-10 h-10 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition"
+                                data-id="3" data-name="Healthy Bowl" data-price="10.99">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish Card 4 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 group">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                            alt="BBQ"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg text-xs font-bold text-gray-800">
+                            <i class="fas fa-star text-yellow-400"></i> 4.9
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Smoky BBQ Ribs</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Tender pork ribs glazed with our signature
+                            honey BBQ sauce.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">$18.99</span>
+                            <button
+                                class="add-to-cart-btn w-10 h-10 rounded-full bg-gray-100 hover:bg-primary hover:text-white flex items-center justify-center transition"
+                                data-id="4" data-name="Smoky BBQ Ribs" data-price="18.99">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="#" class="flex items-center gap-2 mb-4">
+                        <i class="fas fa-utensils text-primary text-2xl"></i>
+                        <span class="font-bold text-xl tracking-tighter">SUPIRI<span
+                                class="text-primary">FOODS</span></span>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Bringing you the best flavors from around the world. Fresh, hot, and delicious.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
+                        <li><a href="menu.html" class="hover:text-primary transition">Menu</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary"></i>
+                            <span>123 Food Street, Colombo 07, Sri Lanka</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span>+94 77 123 4567</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <span>hello@tastyfoods.lk</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 text-sm mb-4">Subscribe for latest offers.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Email"
+                            class="w-full px-4 py-2 rounded-l-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-primary">
+                        <button class="bg-primary px-4 py-2 rounded-r-lg hover:bg-orange-700 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">© 2026 Tasty Foods. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal Overlay -->
+    <div id="cart-modal" class="fixed inset-0 z-[60] hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity" id="cart-overlay"></div>
+        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl transform transition-transform translate-x-full duration-300 flex flex-col"
+            id="cart-panel">
+            <div class="p-5 border-b flex justify-between items-center bg-gray-50">
+                <h2 class="text-xl font-bold flex items-center gap-2"><i class="fas fa-shopping-bag text-primary"></i>
+                    Your Cart</h2>
+                <button id="close-cart" class="text-gray-500 hover:text-red-500 transition">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto p-5 space-y-4" id="cart-items">
+                <!-- Cart items will be injected here -->
+                <div class="flex flex-col items-center justify-center h-full text-gray-400">
+                    <i class="fas fa-shopping-basket text-6xl mb-4 text-gray-200"></i>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            <div class="p-5 border-t bg-gray-50">
+                <div class="flex justify-between items-center mb-4 text-lg font-bold">
+                    <span>Total</span>
+                    <span class="text-primary" id="cart-total">$0.00</span>
+                </div>
+                <button
+                    class="w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-orange-700 transition shadow-lg shadow-orange-500/30">
+                    Checkout Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300">
+        <div
+            class="bg-secondary text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 border-l-4 border-primary">
+            <i class="fas fa-check-circle text-green-400 text-xl"></i>
+            <div>
+                <h4 class="font-bold text-sm">Added to Cart!</h4>
+                <p class="text-xs text-gray-300" id="toast-message">Item added successfully.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
